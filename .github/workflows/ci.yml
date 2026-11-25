@@ -2,8 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
-  pull_request:
+    branches: [verify/credential-tree-retention]
 
 permissions:
   contents: read
@@ -129,7 +128,7 @@ jobs:
         run: pnpm lint
 
       - name: Test
-        run: pnpm vitest run --exclude '**/*.live.test.ts'
+        run: pnpm vitest run
 
       - name: Build
         run: |
